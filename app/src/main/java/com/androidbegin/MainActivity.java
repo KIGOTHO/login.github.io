@@ -20,7 +20,23 @@ public class MainActivity extends Activity {
                     LoginSignupActivity.class);
             startActivity(intent);
             finish();
-
+        } else {
+            // If current user is NOT anonymous user
+            // Get current user data from Parse.com
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            if (currentUser != null) {
+                // Send logged in users to Welcome.class
+                Intent intent = new Intent(MainActivity.this, Welcome.class);
+                startActivity(intent);
+                finish();
+            } else {
+                // Send user to LoginSignupActivity.class
+                Intent intent = new Intent(MainActivity.this,
+                        LoginSignupActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }
 
     }
 }
