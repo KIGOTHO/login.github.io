@@ -50,7 +50,11 @@ public class LoginSignupActivity extends Activity {
         // Sign up Button Click Listener
         signup.setOnClickListener(new OnClickListener() {
 
-        
+            public void onClick(View arg0) {
+                // Retrieve the text entered from the EditText
+                usernametxt = username.getText().toString();
+                passwordtxt = password.getText().toString();
+
 
             }
         });
