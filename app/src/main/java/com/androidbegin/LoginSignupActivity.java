@@ -47,7 +47,10 @@ public class LoginSignupActivity extends Activity {
                         });
             }
         });
-     
+        // Sign up Button Click Listener
+        signup.setOnClickListener(new OnClickListener() {
+
+        
 
             }
         });
