@@ -6,6 +6,13 @@
     android:padding="10dip" >
 
 
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtusername"
+        android:inputType="text" />
+
     <TextView
         android:id="@+id/txtpassword"
         android:layout_width="fill_parent"
