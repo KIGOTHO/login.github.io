@@ -8,6 +8,12 @@
 
 
 
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtpassword"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/login"
