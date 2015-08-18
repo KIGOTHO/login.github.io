@@ -55,6 +55,32 @@ public class LoginSignupActivity extends Activity {
                 usernametxt = username.getText().toString();
                 passwordtxt = password.getText().toString();
 
+                // Force user to fill up the form
+                if (usernametxt.equals("") && passwordtxt.equals("")) {
+                    Toast.makeText(getApplicationContext(),
+                            "Please complete the sign up form",
+                            Toast.LENGTH_LONG).show();
+
+                } else {
+                    // Save new user data into Parse.com Data Storage
+                    ParseUser user = new ParseUser();
+                    user.setUsername(usernametxt);
+                    user.setPassword(passwordtxt);
+                    user.signUpInBackground(new SignUpCallback() {
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                // Show a simple Toast message upon successful registration
+                                Toast.makeText(getApplicationContext(),
+                                        "Successfully Signed up, please log in.",
+                                        Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(),
+                                        "Sign up Error", Toast.LENGTH_LONG)
+                                        .show();
+                            }
+                        }
+                    });
+                }
 
             }
         });
